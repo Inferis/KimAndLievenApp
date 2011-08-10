@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E24B325013F3343200278E9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B324F13F3343200278E9E /* UIKit.framework */; };
+		E24B325213F3343200278E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B325113F3343200278E9E /* Foundation.framework */; };
+		E24B325413F3343200278E9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B325313F3343200278E9E /* CoreGraphics.framework */; };
+		E24B325A13F3343200278E9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E24B325813F3343200278E9E /* InfoPlist.strings */; };
+		E24B325D13F3343200278E9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B325C13F3343200278E9E /* main.m */; };
+		E24B326013F3343200278E9E /* KidAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B325F13F3343200278E9E /* KidAppAppDelegate.m */; };
+		E24B326313F3343200278E9E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24B326113F3343200278E9E /* MainWindow.xib */; };
+		E24B326613F3343200278E9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B326513F3343200278E9E /* RootViewController.m */; };
+		E24B326913F3343200278E9E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24B326713F3343200278E9E /* RootViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E24B324B13F3343200278E9E /* KidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24B324F13F3343200278E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E24B325113F3343200278E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E24B325313F3343200278E9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E24B325713F3343200278E9E /* KidApp-Info.plist */ = {isa = PBXFileReference; path = "KidApp-Info.plist"; sourceTree = "<group>"; };
+		E24B325913F3343200278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E24B325B13F3343200278E9E /* KidApp-Prefix.pch */ = {isa = PBXFileReference; path = "KidApp-Prefix.pch"; sourceTree = "<group>"; };
+		E24B325C13F3343200278E9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E24B325E13F3343200278E9E /* KidAppAppDelegate.h */ = {isa = PBXFileReference; path = KidAppAppDelegate.h; sourceTree = "<group>"; };
+		E24B325F13F3343200278E9E /* KidAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidAppAppDelegate.m; sourceTree = "<group>"; };
+		E24B326213F3343200278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		E24B326413F3343200278E9E /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		E24B326513F3343200278E9E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E24B326813F3343200278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E24B324813F3343200278E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24B325013F3343200278E9E /* UIKit.framework in Frameworks */,
+				E24B325213F3343200278E9E /* Foundation.framework in Frameworks */,
+				E24B325413F3343200278E9E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E24B324013F3343100278E9E = {
+			isa = PBXGroup;
+			children = (
+				E24B325513F3343200278E9E /* KidApp */,
+				E24B324E13F3343200278E9E /* Frameworks */,
+				E24B324C13F3343200278E9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E24B324C13F3343200278E9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E24B324B13F3343200278E9E /* KidApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E24B324E13F3343200278E9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E24B324F13F3343200278E9E /* UIKit.framework */,
+				E24B325113F3343200278E9E /* Foundation.framework */,
+				E24B325313F3343200278E9E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E24B325513F3343200278E9E /* KidApp */ = {
+			isa = PBXGroup;
+			children = (
+				E24B325E13F3343200278E9E /* KidAppAppDelegate.h */,
+				E24B325F13F3343200278E9E /* KidAppAppDelegate.m */,
+				E24B326113F3343200278E9E /* MainWindow.xib */,
+				E24B326413F3343200278E9E /* RootViewController.h */,
+				E24B326513F3343200278E9E /* RootViewController.m */,
+				E24B326713F3343200278E9E /* RootViewController.xib */,
+				E24B325613F3343200278E9E /* Supporting Files */,
+			);
+			path = KidApp;
+			sourceTree = "<group>";
+		};
+		E24B325613F3343200278E9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E24B325713F3343200278E9E /* KidApp-Info.plist */,
+				E24B325813F3343200278E9E /* InfoPlist.strings */,
+				E24B325B13F3343200278E9E /* KidApp-Prefix.pch */,
+				E24B325C13F3343200278E9E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E24B324A13F3343200278E9E /* KidApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E24B326C13F3343200278E9E /* Build configuration list for PBXNativeTarget "KidApp" */;
+			buildPhases = (
+				E24B324713F3343200278E9E /* Sources */,
+				E24B324813F3343200278E9E /* Frameworks */,
+				E24B324913F3343200278E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KidApp;
+			productName = KidApp;
+			productReference = E24B324B13F3343200278E9E /* KidApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E24B324213F3343100278E9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = 10to1;
+			};
+			buildConfigurationList = E24B324513F3343100278E9E /* Build configuration list for PBXProject "KidApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E24B324013F3343100278E9E;
+			productRefGroup = E24B324C13F3343200278E9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E24B324A13F3343200278E9E /* KidApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E24B324913F3343200278E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24B325A13F3343200278E9E /* InfoPlist.strings in Resources */,
+				E24B326313F3343200278E9E /* MainWindow.xib in Resources */,
+				E24B326913F3343200278E9E /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E24B324713F3343200278E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24B325D13F3343200278E9E /* main.m in Sources */,
+				E24B326013F3343200278E9E /* KidAppAppDelegate.m in Sources */,
+				E24B326613F3343200278E9E /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E24B325813F3343200278E9E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E24B325913F3343200278E9E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E24B326113F3343200278E9E /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E24B326213F3343200278E9E /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		E24B326713F3343200278E9E /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E24B326813F3343200278E9E /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E24B326A13F3343200278E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E24B326B13F3343200278E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		E24B326D13F3343200278E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KidApp/KidApp-Prefix.pch";
+				INFOPLIST_FILE = "KidApp/KidApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E24B326E13F3343200278E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KidApp/KidApp-Prefix.pch";
+				INFOPLIST_FILE = "KidApp/KidApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E24B324513F3343100278E9E /* Build configuration list for PBXProject "KidApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24B326A13F3343200278E9E /* Debug */,
+				E24B326B13F3343200278E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E24B326C13F3343200278E9E /* Build configuration list for PBXNativeTarget "KidApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24B326D13F3343200278E9E /* Debug */,
+				E24B326E13F3343200278E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E24B324213F3343100278E9E /* Project object */;
+}
