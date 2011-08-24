@@ -7,32 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E22714C81405A3F3008FC3FD /* sperm_egg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E22714C71405A3F3008FC3FD /* sperm_egg.jpg */; };
 		E24B325013F3343200278E9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B324F13F3343200278E9E /* UIKit.framework */; };
 		E24B325213F3343200278E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B325113F3343200278E9E /* Foundation.framework */; };
 		E24B325413F3343200278E9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B325313F3343200278E9E /* CoreGraphics.framework */; };
 		E24B325A13F3343200278E9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E24B325813F3343200278E9E /* InfoPlist.strings */; };
 		E24B325D13F3343200278E9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B325C13F3343200278E9E /* main.m */; };
 		E24B326013F3343200278E9E /* KidAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B325F13F3343200278E9E /* KidAppAppDelegate.m */; };
-		E24B326313F3343200278E9E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24B326113F3343200278E9E /* MainWindow.xib */; };
-		E24B326613F3343200278E9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B326513F3343200278E9E /* RootViewController.m */; };
-		E24B326913F3343200278E9E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24B326713F3343200278E9E /* RootViewController.xib */; };
+		E24B327213F3343E00278E9E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24B327013F3343E00278E9E /* MainWindow-iPad.xib */; };
+		E24B327B13F3BF1300278E9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B327913F3BF1300278E9E /* RootViewController.m */; };
+		E27E7E3213F47971001B180C /* icon-kim.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2E13F47971001B180C /* icon-kim.png */; };
+		E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2F13F47971001B180C /* icon-kim@2x.png */; };
+		E27E7E3413F47971001B180C /* icon-lieven.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3013F47971001B180C /* icon-lieven.png */; };
+		E27E7E3513F47971001B180C /* icon-lieven@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3113F47971001B180C /* icon-lieven@2x.png */; };
+		E27E7E3A13F47D5A001B180C /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E7E3813F47D5A001B180C /* FormViewController.m */; };
+		E27E7E3B13F47D5A001B180C /* FormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3913F47D5A001B180C /* FormViewController.xib */; };
+		E27E7E3D13F48CAB001B180C /* form.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3C13F48CAB001B180C /* form.png */; };
+		E2DC271B13F48FAD0092E2E7 /* bg-Kim.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2DC271913F48FAC0092E2E7 /* bg-Kim.jpg */; };
+		E2DC271C13F48FAD0092E2E7 /* bg-Lieven.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2DC271A13F48FAC0092E2E7 /* bg-Lieven.jpg */; };
+		E2DC271F13F499910092E2E7 /* chauncydeluxxe-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2DC271E13F499910092E2E7 /* chauncydeluxxe-regular.otf */; };
+		E2E441D713F4A704009909D8 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E441D613F4A704009909D8 /* RootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E22714C71405A3F3008FC3FD /* sperm_egg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sperm_egg.jpg; sourceTree = "<group>"; };
 		E24B324B13F3343200278E9E /* KidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24B324F13F3343200278E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E24B325113F3343200278E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E24B325313F3343200278E9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E24B325713F3343200278E9E /* KidApp-Info.plist */ = {isa = PBXFileReference; path = "KidApp-Info.plist"; sourceTree = "<group>"; };
+		E24B325713F3343200278E9E /* KidApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KidApp-Info.plist"; sourceTree = "<group>"; };
 		E24B325913F3343200278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E24B325B13F3343200278E9E /* KidApp-Prefix.pch */ = {isa = PBXFileReference; path = "KidApp-Prefix.pch"; sourceTree = "<group>"; };
+		E24B325B13F3343200278E9E /* KidApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KidApp-Prefix.pch"; sourceTree = "<group>"; };
 		E24B325C13F3343200278E9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E24B325E13F3343200278E9E /* KidAppAppDelegate.h */ = {isa = PBXFileReference; path = KidAppAppDelegate.h; sourceTree = "<group>"; };
+		E24B325E13F3343200278E9E /* KidAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidAppAppDelegate.h; sourceTree = "<group>"; };
 		E24B325F13F3343200278E9E /* KidAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidAppAppDelegate.m; sourceTree = "<group>"; };
 		E24B326213F3343200278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		E24B326413F3343200278E9E /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
-		E24B326513F3343200278E9E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		E24B326813F3343200278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		E24B327113F3343E00278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E24B327813F3BF1300278E9E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E24B327913F3BF1300278E9E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E27E7E2E13F47971001B180C /* icon-kim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim.png"; sourceTree = "<group>"; };
+		E27E7E2F13F47971001B180C /* icon-kim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim@2x.png"; sourceTree = "<group>"; };
+		E27E7E3013F47971001B180C /* icon-lieven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven.png"; sourceTree = "<group>"; };
+		E27E7E3113F47971001B180C /* icon-lieven@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven@2x.png"; sourceTree = "<group>"; };
+		E27E7E3713F47D5A001B180C /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
+		E27E7E3813F47D5A001B180C /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
+		E27E7E3913F47D5A001B180C /* FormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormViewController.xib; sourceTree = "<group>"; };
+		E27E7E3C13F48CAB001B180C /* form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = form.png; sourceTree = "<group>"; };
+		E2DC271913F48FAC0092E2E7 /* bg-Kim.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-Kim.jpg"; sourceTree = "<group>"; };
+		E2DC271A13F48FAC0092E2E7 /* bg-Lieven.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-Lieven.jpg"; sourceTree = "<group>"; };
+		E2DC271E13F499910092E2E7 /* chauncydeluxxe-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "chauncydeluxxe-regular.otf"; sourceTree = "<group>"; };
+		E2E441D613F4A704009909D8 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +103,18 @@
 		E24B325513F3343200278E9E /* KidApp */ = {
 			isa = PBXGroup;
 			children = (
+				E27E7E2C13F47971001B180C /* Assets */,
+				E24B326F13F3343D00278E9E /* iPad */,
 				E24B325E13F3343200278E9E /* KidAppAppDelegate.h */,
 				E24B325F13F3343200278E9E /* KidAppAppDelegate.m */,
 				E24B326113F3343200278E9E /* MainWindow.xib */,
-				E24B326413F3343200278E9E /* RootViewController.h */,
-				E24B326513F3343200278E9E /* RootViewController.m */,
-				E24B326713F3343200278E9E /* RootViewController.xib */,
 				E24B325613F3343200278E9E /* Supporting Files */,
+				E24B327813F3BF1300278E9E /* RootViewController.h */,
+				E24B327913F3BF1300278E9E /* RootViewController.m */,
+				E2E441D613F4A704009909D8 /* RootViewController.xib */,
+				E27E7E3713F47D5A001B180C /* FormViewController.h */,
+				E27E7E3813F47D5A001B180C /* FormViewController.m */,
+				E27E7E3913F47D5A001B180C /* FormViewController.xib */,
 			);
 			path = KidApp;
 			sourceTree = "<group>";
@@ -99,6 +128,38 @@
 				E24B325C13F3343200278E9E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E24B326F13F3343D00278E9E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				E24B327013F3343E00278E9E /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		E27E7E2C13F47971001B180C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E2DC271E13F499910092E2E7 /* chauncydeluxxe-regular.otf */,
+				E27E7E2D13F47971001B180C /* images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E27E7E2D13F47971001B180C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E22714C71405A3F3008FC3FD /* sperm_egg.jpg */,
+				E2DC271913F48FAC0092E2E7 /* bg-Kim.jpg */,
+				E2DC271A13F48FAC0092E2E7 /* bg-Lieven.jpg */,
+				E27E7E3C13F48CAB001B180C /* form.png */,
+				E27E7E2E13F47971001B180C /* icon-kim.png */,
+				E27E7E2F13F47971001B180C /* icon-kim@2x.png */,
+				E27E7E3013F47971001B180C /* icon-lieven.png */,
+				E27E7E3113F47971001B180C /* icon-lieven@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +188,7 @@
 		E24B324213F3343100278E9E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = 10to1;
 			};
 			buildConfigurationList = E24B324513F3343100278E9E /* Build configuration list for PBXProject "KidApp" */;
@@ -152,8 +214,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24B325A13F3343200278E9E /* InfoPlist.strings in Resources */,
-				E24B326313F3343200278E9E /* MainWindow.xib in Resources */,
-				E24B326913F3343200278E9E /* RootViewController.xib in Resources */,
+				E24B327213F3343E00278E9E /* MainWindow-iPad.xib in Resources */,
+				E27E7E3213F47971001B180C /* icon-kim.png in Resources */,
+				E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */,
+				E27E7E3413F47971001B180C /* icon-lieven.png in Resources */,
+				E27E7E3513F47971001B180C /* icon-lieven@2x.png in Resources */,
+				E27E7E3B13F47D5A001B180C /* FormViewController.xib in Resources */,
+				E27E7E3D13F48CAB001B180C /* form.png in Resources */,
+				E2DC271B13F48FAD0092E2E7 /* bg-Kim.jpg in Resources */,
+				E2DC271C13F48FAD0092E2E7 /* bg-Lieven.jpg in Resources */,
+				E2DC271F13F499910092E2E7 /* chauncydeluxxe-regular.otf in Resources */,
+				E2E441D713F4A704009909D8 /* RootViewController.xib in Resources */,
+				E22714C81405A3F3008FC3FD /* sperm_egg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +238,8 @@
 			files = (
 				E24B325D13F3343200278E9E /* main.m in Sources */,
 				E24B326013F3343200278E9E /* KidAppAppDelegate.m in Sources */,
-				E24B326613F3343200278E9E /* RootViewController.m in Sources */,
+				E24B327B13F3BF1300278E9E /* RootViewController.m in Sources */,
+				E27E7E3A13F47D5A001B180C /* FormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,12 +262,12 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		E24B326713F3343200278E9E /* RootViewController.xib */ = {
+		E24B327013F3343E00278E9E /* MainWindow-iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E24B326813F3343200278E9E /* en */,
+				E24B327113F3343E00278E9E /* en */,
 			);
-			name = RootViewController.xib;
+			name = "MainWindow-iPad.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -241,7 +314,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KidApp/KidApp-Prefix.pch";
 				INFOPLIST_FILE = "KidApp/KidApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -254,7 +329,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KidApp/KidApp-Prefix.pch";
 				INFOPLIST_FILE = "KidApp/KidApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -279,6 +356,7 @@
 				E24B326E13F3343200278E9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

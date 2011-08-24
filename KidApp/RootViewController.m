@@ -2,59 +2,101 @@
 //  RootViewController.m
 //  KidApp
 //
-//  Created by Tom Adriaenssen on 10/08/11.
+//  Created by Tom Adriaenssen on 11/08/11.
 //  Copyright 2011 10to1. All rights reserved.
 //
 
 #import "RootViewController.h"
+#import "FormViewController.h"
 
 @implementation RootViewController
+
+@synthesize tableView = _tableView;
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.title = @"Het koppel";
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated  {
     [super viewWillAppear:animated];
-}
+    
+    [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:animated];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.196 green:0.310 blue:0.522 alpha:1.000];
 
-- (void)viewDidAppear:(BOOL)animated
-{
+    UIView* view = [[_tableView subviews] objectAtIndex:0];
+    view.alpha = 0;
+}
+    
+- (void)viewDidAppear:(BOOL)animated  {
+    for (UIView* view in [_tableView subviews]) {
+        if ([[[view class] description] isEqualToString:@"UITableHeaderFooterView"]) {
+            UILabel* label = [[view subviews] objectAtIndex:0];
+            [label setTextColor:[UIColor whiteColor]];
+            [label setShadowColor:[UIColor blackColor]];
+            [label setFont:[UIFont boldSystemFontOfSize:22]];
+            label.frame = (CGRect) { label.frame.origin, label.frame.size.width + 50, label.frame.size.height };
+        }
+    }
+    
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)viewDidUnload
 {
-	[super viewWillDisappear:animated];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	[super viewDidDisappear:animated];
+    // Return YES for supported orientations
+	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
- */
+#pragma mark - Table view data source
 
-// Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 1;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -63,8 +105,17 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-
-    // Configure the cell.
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (indexPath.section == 0) {
+        cell.textLabel.text = @"Lieven";
+        cell.imageView.image = [UIImage imageNamed:@"icon-lieven.png"];
+    }
+    else {
+        cell.textLabel.text = @"Kim";
+        cell.imageView.image = [UIImage imageNamed:@"icon-kim.png"];
+    }
+    
     return cell;
 }
 
@@ -81,14 +132,12 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Delete the row from the data source.
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 */
@@ -109,36 +158,17 @@
 }
 */
 
+#pragma mark - Table view delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    // Navigation logic may go here. Create and push another view controller.
+    FormViewController *formViewController = [[FormViewController alloc] initWithNibName:@"FormViewController" bundle:nil];
+    formViewController.person = indexPath.section == 0 ? @"Lieven" : @"Kim";
     // ...
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
+    [self.navigationController pushViewController:formViewController animated:YES];
+    [formViewController release];
 }
 
 @end
