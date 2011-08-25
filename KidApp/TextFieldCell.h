@@ -6,8 +6,15 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
+@protocol TextFieldCellDelegate <NSObject>
+
+- (void)finishedEditing:(NSString*)content;
+
+@end
+
 @interface TextFieldCell : UITableViewCell <UITextFieldDelegate>
 
 @property (nonatomic, retain) UITextField *field;
+@property (nonatomic, retain) id<TextFieldCellDelegate> delegate;
 
 @end

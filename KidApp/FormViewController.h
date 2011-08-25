@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TextFieldCell.h"
 
-
-@interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSIndexPath* editingPath;
+@interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TextFieldCellDelegate> {
+    int currentlyEditing, lastEdited;
     NSArray* data;
 }
 

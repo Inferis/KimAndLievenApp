@@ -10,7 +10,8 @@
 
 @implementation TextFieldCell
 
-@synthesize field;
+@synthesize field = _field;
+@synthesize delegate = _delegate;
 
 #pragma mark - Initialization
 
@@ -18,8 +19,8 @@
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.field = [[UITextField alloc] initWithFrame:CGRectMake(0, 11, 210, 25)];
-        self.field.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
+        self.field = [[UITextField alloc] initWithFrame:CGRectMake(0, 11, 210, 34)];
+        self.field.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:22];
         self.field.placeholder = @"vul iets in...";
         self.field.textColor = [UIColor blackColor];
         self.field.textAlignment = UITextAlignmentLeft;
@@ -43,10 +44,14 @@
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self.delegate finishedEditing:textField.text];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.field.frame = (CGRect) { 10, 11, self.bounds.size.width - 20, 25 };
+    self.field.frame = (CGRect) { 10, 11, self.bounds.size.width - 20, 34 };
 }
 
 #pragma mark - Memory

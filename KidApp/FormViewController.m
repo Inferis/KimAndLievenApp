@@ -21,13 +21,15 @@
     if (self) {
         // Custom initialization::Geboorteuur:Geslacht:Lengte:Gewicht
         data = [[NSArray arrayWithObjects:
-                 [NSDictionary dictionaryWithObjectsAndKeys:@"Naam van het kind", @"title", @"text", @"type", @"", @"data", nil], 
-                 [NSDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"", @"data", nil], 
-                 [NSDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"", @"data", nil], 
-                 [NSDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"choice", @"type", @"", @"data", nil], 
-                 [NSDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"text", @"type", @"", @"data", nil], 
-                 [NSDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"text", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Naam van het kind", @"title", @"text", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"choice", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"text", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"text", @"type", @"", @"data", nil], 
                 nil] retain];
+        currentlyEditing = NSNotFound;
+        lastEdited = NSNotFound;
     }
     return self;
 }
@@ -35,7 +37,6 @@
 - (void)dealloc
 {
     [data release];
-    [editingPath release];
     [super dealloc];
 }
 
@@ -84,9 +85,9 @@
 
 #pragma mark - Keyboard handling
 
-- (NSIndexSet*)allIndexesExcept:(NSIndexPath*)path {
+- (NSIndexSet*)allIndexesExcept:(int)except {
     NSMutableIndexSet* indexes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 6)];
-    if (path != nil) [indexes removeIndex:path.section];
+    if (except != NSNotFound) [indexes removeIndex:except];
     return indexes;
 }
 
@@ -95,16 +96,16 @@
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     UITableViewCell *cell = (UITableViewCell*)[[[keyWindow performSelector:@selector(firstResponder)] superview] superview];
     
-    editingPath = [[_tableView indexPathForCell:cell] retain];
-    
-    [_tableView deleteSections:[self allIndexesExcept:editingPath] withRowAnimation:UITableViewRowAnimationFade];
+    currentlyEditing = [_tableView indexPathForCell:cell].section;
+
+    [_tableView deleteSections:[self allIndexesExcept:currentlyEditing] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)keyboardWillHide:(NSNotification*)notification {
-    NSIndexSet* indexes = [self allIndexesExcept:editingPath];
+    NSIndexSet* indexes = [self allIndexesExcept:currentlyEditing];
     
-    [editingPath release];
-    editingPath = nil;
+    lastEdited = currentlyEditing;
+    currentlyEditing = NSNotFound;
 
     [self performSelector:@selector(hide2:) withObject:indexes afterDelay:0.01];
 }
@@ -112,14 +113,20 @@
 - (void)hide2:(NSIndexSet*)indexes {
     [_tableView beginUpdates];
     [_tableView insertSections:indexes withRowAnimation:UITableViewRowAnimationFade];
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [_tableView endUpdates];
+}
+
+- (void)finishedEditing:(NSString *)content {
+    NSLog(@"editing = %d --> %@", lastEdited, content);
+    [[data objectAtIndex:lastEdited] setValue:content forKey:@"data"];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return editingPath == nil ? 6 : 1;
+    return currentlyEditing == NSNotFound ? 6 : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -127,8 +134,12 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    section = editingPath ? editingPath.section : section;
+    section = currentlyEditing != NSNotFound ? currentlyEditing : section;
     NSString* title = [[data objectAtIndex:section] objectForKey:@"title"];
 
     UILabel* label = [[[UILabel alloc] initWithFrame:(CGRect) { 25, 0, tableView.frame.size.width, 44 }] autorelease];
@@ -136,7 +147,7 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[UIColor whiteColor]];
     [label setShadowColor:[UIColor blackColor]];
-    [label setFont:[UIFont boldSystemFontOfSize:22]];
+    [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22]];
     
     return label;
 }
@@ -147,7 +158,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int section = editingPath ? editingPath.section : indexPath.section;
+    int section = currentlyEditing != NSNotFound ? currentlyEditing : indexPath.section;
     NSString* type = [[data objectAtIndex:section] objectForKey:@"type"];
 
     UITableViewCell *cell;
@@ -158,8 +169,9 @@
         if (cell == nil) {
             cell = [[[TextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TextFieldCellIdentifier] autorelease];
         }
+        ((TextFieldCell*)cell).delegate = self;
 
-        [cell.textLabel setText:[[data objectAtIndex:section] objectForKey:@"data"]];
+        [((TextFieldCell*)cell).field setText:[[data objectAtIndex:section] objectForKey:@"data"]];
     }
     else {
         static NSString *CellIdentifier = @"Cell";
