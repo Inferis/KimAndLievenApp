@@ -19,13 +19,22 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // Custom initialization::Geboorteuur:Geslacht:Lengte:Gewicht
+        data = [[NSArray arrayWithObjects:
+                 [NSDictionary dictionaryWithObjectsAndKeys:@"Naam van het kind", @"title", @"text", @"type", @"", @"data", nil], 
+                 [NSDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"", @"data", nil], 
+                 [NSDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"", @"data", nil], 
+                 [NSDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"choice", @"type", @"", @"data", nil], 
+                 [NSDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"text", @"type", @"", @"data", nil], 
+                 [NSDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"text", @"type", @"", @"data", nil], 
+                nil] retain];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [data release];
     [editingPath release];
     [super dealloc];
 }
@@ -82,26 +91,28 @@
 }
 
 
-- (void)hideOthers {
+- (void)keyboardWillShow:(NSNotification*)notification {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     UITableViewCell *cell = (UITableViewCell*)[[[keyWindow performSelector:@selector(firstResponder)] superview] superview];
-
+    
     editingPath = [[_tableView indexPathForCell:cell] retain];
     
     [_tableView deleteSections:[self allIndexesExcept:editingPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (void)keyboardWillShow:(NSNotification*)notification {
-    [self hideOthers];
-}
-
 - (void)keyboardWillHide:(NSNotification*)notification {
     NSIndexSet* indexes = [self allIndexesExcept:editingPath];
-
+    
     [editingPath release];
     editingPath = nil;
 
+    [self performSelector:@selector(hide2:) withObject:indexes afterDelay:0.01];
+}
+
+- (void)hide2:(NSIndexSet*)indexes {
+    [_tableView beginUpdates];
     [_tableView insertSections:indexes withRowAnimation:UITableViewRowAnimationFade];
+    [_tableView endUpdates];
 }
 
 #pragma mark - Table view data source
@@ -117,7 +128,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSString* title = [[@"Naam van het kind:Geboortedatum:Geboorteuur:Geslacht:Lengte:Gewicht" componentsSeparatedByString:@":"] objectAtIndex:section];
+    section = editingPath ? editingPath.section : section;
+    NSString* title = [[data objectAtIndex:section] objectForKey:@"title"];
 
     UILabel* label = [[[UILabel alloc] initWithFrame:(CGRect) { 25, 0, tableView.frame.size.width, 44 }] autorelease];
     label.text = title;
@@ -135,13 +147,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cell for %@", indexPath);
-    static NSString *CellIdentifier = @"NormalTextFieldCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[TextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    int section = editingPath ? editingPath.section : indexPath.section;
+    NSString* type = [[data objectAtIndex:section] objectForKey:@"type"];
+
+    UITableViewCell *cell;
+    if ([type isEqualToString:@"text"]) {
+        static NSString *TextFieldCellIdentifier = @"TextFieldCell";
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:TextFieldCellIdentifier];
+        if (cell == nil) {
+            cell = [[[TextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TextFieldCellIdentifier] autorelease];
+        }
+
+        [cell.textLabel setText:[[data objectAtIndex:section] objectForKey:@"data"]];
     }
+    else {
+        static NSString *CellIdentifier = @"Cell";
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+    }
+
         
     return cell;
 }

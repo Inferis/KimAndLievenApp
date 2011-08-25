@@ -11,6 +11,7 @@
 
 @interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSIndexPath* editingPath;
+    NSArray* data;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
