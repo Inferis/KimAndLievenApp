@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "TextFieldCell.h"
+#import "DateController.h"
 
-@interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TextFieldCellDelegate> {
+@interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TextFieldCellDelegate, UIPopoverControllerDelegate, DateControllerDelegate> {
+    @private
     int currentlyEditing, lastEdited;
     NSArray* data;
+    UIPopoverController* _poController;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

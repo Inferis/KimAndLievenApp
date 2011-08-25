@@ -8,6 +8,7 @@
 
 #import "FormViewController.h"
 #import "TextFieldCell.h"
+#import "DateController.h"
 
 @implementation FormViewController
 
@@ -36,6 +37,7 @@
 
 - (void)dealloc
 {
+    [_poController release];
     [data release];
     [super dealloc];
 }
@@ -180,11 +182,70 @@
         if (cell == nil) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         }
+        
+        [cell.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22]];
+        cell.textLabel.text = [[data objectAtIndex:section] objectForKey:@"data"];
     }
 
         
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (currentlyEditing != NSNotFound) return nil;
+    
+    indexPath = [[[data objectAtIndex:indexPath.section] valueForKey:@"type"] isEqualToString:@"text"] ? nil : indexPath;
+    NSLog(@"will %@", indexPath);
+    return indexPath;
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    currentlyEditing = indexPath.section;
+    NSDictionary* row = [data objectAtIndex:indexPath.section];
+    NSString* type = [row valueForKey:@"type"];
+    
+    [_poController dismissPopoverAnimated:YES];
+    if ([type isEqualToString:@"date"]) {
+        DateController* dateController = [[[DateController alloc] initWithDate:[row valueForKey:@"data"]] autorelease];
+        dateController.delegate = self;
+        _poController = [[UIPopoverController alloc] initWithContentViewController:dateController];
+        _poController.popoverContentSize = [dateController popoverSize];
+        _poController.delegate = self;
+        [_poController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
+    }
+    else if ([type isEqualToString:@"time"]) {
+        DateController* dateController = [[[DateController alloc] initWithTime:[row valueForKey:@"data"]] autorelease];
+        dateController.delegate = self;
+        _poController = [[UIPopoverController alloc] initWithContentViewController:dateController];
+        _poController.popoverContentSize = [dateController popoverSize];
+        _poController.delegate = self;
+        [_poController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
+    }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    [_poController release];
+    _poController = nil;
+
+    [_tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentlyEditing] animated:YES];
+    currentlyEditing = NSNotFound;
+}
+
+- (void)dismissAndSave:(BOOL)save {
+    DateController* dateController = (DateController*)_poController.contentViewController;
+    
+    if (save) {
+        if (currentlyEditing == 1)
+            [[data objectAtIndex:currentlyEditing] setValue:[dateController getDateValue] forKey:@"data"];
+        else if (currentlyEditing == 2) 
+            [[data objectAtIndex:currentlyEditing] setValue:[dateController getTimeValue] forKey:@"data"];
+        [_tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentlyEditing] animated:YES];
+    }
+    
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:currentlyEditing];
+    [_poController dismissPopoverAnimated:YES];
+
+    currentlyEditing = NSNotFound;
+    [_tableView reloadSections:indexes withRowAnimation:UITableViewRowAnimationFade];
+}
 @end

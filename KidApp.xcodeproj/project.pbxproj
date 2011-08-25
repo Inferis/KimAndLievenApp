@@ -18,6 +18,8 @@
 		E24B326013F3343200278E9E /* KidAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B325F13F3343200278E9E /* KidAppAppDelegate.m */; };
 		E24B327213F3343E00278E9E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24B327013F3343E00278E9E /* MainWindow-iPad.xib */; };
 		E24B327B13F3BF1300278E9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B327913F3BF1300278E9E /* RootViewController.m */; };
+		E26452361406F38D005A0BBC /* DateController.m in Sources */ = {isa = PBXBuildFile; fileRef = E26452341406F38D005A0BBC /* DateController.m */; };
+		E26452371406F38D005A0BBC /* DateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26452351406F38D005A0BBC /* DateController.xib */; };
 		E27E7E3213F47971001B180C /* icon-kim.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2E13F47971001B180C /* icon-kim.png */; };
 		E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2F13F47971001B180C /* icon-kim@2x.png */; };
 		E27E7E3413F47971001B180C /* icon-lieven.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3013F47971001B180C /* icon-lieven.png */; };
@@ -51,6 +53,9 @@
 		E24B327113F3343E00278E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E24B327813F3BF1300278E9E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E24B327913F3BF1300278E9E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E26452331406F38D005A0BBC /* DateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateController.h; sourceTree = "<group>"; };
+		E26452341406F38D005A0BBC /* DateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateController.m; sourceTree = "<group>"; };
+		E26452351406F38D005A0BBC /* DateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateController.xib; sourceTree = "<group>"; };
 		E27E7E2E13F47971001B180C /* icon-kim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim.png"; sourceTree = "<group>"; };
 		E27E7E2F13F47971001B180C /* icon-kim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim@2x.png"; sourceTree = "<group>"; };
 		E27E7E3013F47971001B180C /* icon-lieven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven.png"; sourceTree = "<group>"; };
@@ -133,6 +138,9 @@
 				E27E7E3713F47D5A001B180C /* FormViewController.h */,
 				E27E7E3813F47D5A001B180C /* FormViewController.m */,
 				E27E7E3913F47D5A001B180C /* FormViewController.xib */,
+				E26452331406F38D005A0BBC /* DateController.h */,
+				E26452341406F38D005A0BBC /* DateController.m */,
+				E26452351406F38D005A0BBC /* DateController.xib */,
 			);
 			path = KidApp;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 				E2DC271F13F499910092E2E7 /* chauncydeluxxe-regular.otf in Resources */,
 				E2E441D713F4A704009909D8 /* RootViewController.xib in Resources */,
 				E22714C81405A3F3008FC3FD /* sperm_egg.jpg in Resources */,
+				E26452371406F38D005A0BBC /* DateController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,7 @@
 				E27E7E3A13F47D5A001B180C /* FormViewController.m in Sources */,
 				E22714CC1405AEE4008FC3FD /* NormalTextFieldCell.m in Sources */,
 				E22BB22B1405B17E00409D6F /* TextFieldCell.m in Sources */,
+				E26452361406F38D005A0BBC /* DateController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
