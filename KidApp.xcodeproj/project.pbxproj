@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E22714C81405A3F3008FC3FD /* sperm_egg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E22714C71405A3F3008FC3FD /* sperm_egg.jpg */; };
+		E22714CC1405AEE4008FC3FD /* NormalTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E22714CA1405AEE4008FC3FD /* NormalTextFieldCell.m */; };
+		E22BB22B1405B17E00409D6F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E22BB2291405B17E00409D6F /* TextFieldCell.m */; };
 		E24B325013F3343200278E9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B324F13F3343200278E9E /* UIKit.framework */; };
 		E24B325213F3343200278E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B325113F3343200278E9E /* Foundation.framework */; };
 		E24B325413F3343200278E9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B325313F3343200278E9E /* CoreGraphics.framework */; };
@@ -31,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		E22714C71405A3F3008FC3FD /* sperm_egg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sperm_egg.jpg; sourceTree = "<group>"; };
+		E22714CA1405AEE4008FC3FD /* NormalTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTextFieldCell.m; sourceTree = "<group>"; };
+		E22714CB1405AEE4008FC3FD /* NormalTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTextFieldCell.h; sourceTree = "<group>"; };
+		E22BB2291405B17E00409D6F /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		E22BB22A1405B17E00409D6F /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		E24B324B13F3343200278E9E /* KidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24B324F13F3343200278E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E24B325113F3343200278E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E22714C91405AEC1008FC3FD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E22BB2291405B17E00409D6F /* TextFieldCell.m */,
+				E22BB22A1405B17E00409D6F /* TextFieldCell.h */,
+				E22714CA1405AEE4008FC3FD /* NormalTextFieldCell.m */,
+				E22714CB1405AEE4008FC3FD /* NormalTextFieldCell.h */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		E24B324013F3343100278E9E = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +120,7 @@
 		E24B325513F3343200278E9E /* KidApp */ = {
 			isa = PBXGroup;
 			children = (
+				E22714C91405AEC1008FC3FD /* Components */,
 				E27E7E2C13F47971001B180C /* Assets */,
 				E24B326F13F3343D00278E9E /* iPad */,
 				E24B325E13F3343200278E9E /* KidAppAppDelegate.h */,
@@ -240,6 +258,8 @@
 				E24B326013F3343200278E9E /* KidAppAppDelegate.m in Sources */,
 				E24B327B13F3BF1300278E9E /* RootViewController.m in Sources */,
 				E27E7E3A13F47D5A001B180C /* FormViewController.m in Sources */,
+				E22714CC1405AEE4008FC3FD /* NormalTextFieldCell.m in Sources */,
+				E22BB22B1405B17E00409D6F /* TextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

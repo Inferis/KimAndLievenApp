@@ -10,7 +10,7 @@
 
 
 @interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    
+    NSIndexPath* editingPath;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

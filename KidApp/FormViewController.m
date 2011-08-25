@@ -7,7 +7,7 @@
 //
 
 #import "FormViewController.h"
-
+#import "TextFieldCell.h"
 
 @implementation FormViewController
 
@@ -26,6 +26,7 @@
 
 - (void)dealloc
 {
+    [editingPath release];
     [super dealloc];
 }
 
@@ -48,11 +49,8 @@
         ? [UIColor colorWithRed:0.314 green:0.573 blue:0.816 alpha:1.000]
         : [UIColor colorWithRed:0.890 green:0.427 blue:0.863 alpha:1.000];
     
-    //self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"bg-%@.jpg", self.person]];
-    
-    
-//    UIFont *fieldFont = [[UIFont fontWithName:@"Chauncy Deluxxe" size:55] autorelease];
-//    _nameField.font = fieldFont;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated  {
@@ -60,20 +58,6 @@
 
     UIView* view = [[_tableView subviews] objectAtIndex:0];
     view.alpha = 0;
-}
-
-- (void)viewDidAppear:(BOOL)animated  {
-    for (UIView* view in [_tableView subviews]) {
-        if ([[[view class] description] isEqualToString:@"UITableHeaderFooterView"]) {
-            UILabel* label = [[view subviews] objectAtIndex:0];
-            [label setTextColor:[UIColor whiteColor]];
-            [label setShadowColor:[UIColor blackColor]];
-            [label setFont:[UIFont boldSystemFontOfSize:22]];
-            label.frame = (CGRect) { label.frame.origin, label.frame.size.width + 50, label.frame.size.height };
-        }
-    }
-
-    [super viewDidAppear:animated];
 }
 
 - (void)viewDidUnload
@@ -89,11 +73,42 @@
 	return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
+#pragma mark - Keyboard handling
+
+- (NSIndexSet*)allIndexesExcept:(NSIndexPath*)path {
+    NSMutableIndexSet* indexes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 6)];
+    if (path != nil) [indexes removeIndex:path.section];
+    return indexes;
+}
+
+
+- (void)hideOthers {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    UITableViewCell *cell = (UITableViewCell*)[[[keyWindow performSelector:@selector(firstResponder)] superview] superview];
+
+    editingPath = [[_tableView indexPathForCell:cell] retain];
+    
+    [_tableView deleteSections:[self allIndexesExcept:editingPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)keyboardWillShow:(NSNotification*)notification {
+    [self hideOthers];
+}
+
+- (void)keyboardWillHide:(NSNotification*)notification {
+    NSIndexSet* indexes = [self allIndexesExcept:editingPath];
+
+    [editingPath release];
+    editingPath = nil;
+
+    [_tableView insertSections:indexes withRowAnimation:UITableViewRowAnimationFade];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return editingPath == nil ? 6 : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -101,28 +116,33 @@
     return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[@"Naam van het kind:Geboortedatum:Geboorteuur:Geslacht:Lengte:Gewicht" componentsSeparatedByString:@":"] objectAtIndex:section];
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString* title = [[@"Naam van het kind:Geboortedatum:Geboorteuur:Geslacht:Lengte:Gewicht" componentsSeparatedByString:@":"] objectAtIndex:section];
+
+    UILabel* label = [[[UILabel alloc] initWithFrame:(CGRect) { 25, 0, tableView.frame.size.width, 44 }] autorelease];
+    label.text = title;
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor whiteColor]];
+    [label setShadowColor:[UIColor blackColor]];
+    [label setFont:[UIFont boldSystemFontOfSize:22]];
+    
+    return label;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    NSLog(@"cell for %@", indexPath);
+    static NSString *CellIdentifier = @"NormalTextFieldCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[TextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"Lieven";
-        cell.imageView.image = [UIImage imageNamed:@"icon-lieven.png"];
-    }
-    else {
-        cell.textLabel.text = @"Kim";
-        cell.imageView.image = [UIImage imageNamed:@"icon-kim.png"];
-    }
-    
+        
     return cell;
 }
 
