@@ -20,7 +20,6 @@
 @property (nonatomic, retain) IBOutlet id<SexControllerDelegate> delegate;
 
 - (id)initWithSex:(NSString*)date;
-- (NSString*)getSexValue;
 
 - (CGSize)popoverSize;
 

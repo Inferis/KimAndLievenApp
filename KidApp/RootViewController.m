@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "FormViewController.h"
+#import "Kid.h"
 
 @implementation RootViewController
 
@@ -150,6 +151,8 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     FormViewController *formViewController = [[FormViewController alloc] initWithNibName:@"FormViewController" bundle:nil];
+    
+    
     formViewController.person = indexPath.section == 0 ? @"Lieven" : @"Kim";
     // ...
     // Pass the selected object to the new view controller.

@@ -23,6 +23,20 @@
 		E264523C140719A1005A0BBC /* SexController.m in Sources */ = {isa = PBXBuildFile; fileRef = E264523A140719A0005A0BBC /* SexController.m */; };
 		E264523D140719A1005A0BBC /* SexController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E264523B140719A1005A0BBC /* SexController.xib */; };
 		E2645240140723D8005A0BBC /* LabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E264523F140723D8005A0BBC /* LabelView.m */; };
+		E264524414079197005A0BBC /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E264524214079197005A0BBC /* Storage.xcdatamodeld */; };
+		E264524E14079330005A0BBC /* Kid.m in Sources */ = {isa = PBXBuildFile; fileRef = E264524A14079330005A0BBC /* Kid.m */; };
+		E264524F14079330005A0BBC /* _Kid.m in Sources */ = {isa = PBXBuildFile; fileRef = E264524C14079330005A0BBC /* _Kid.m */; };
+		E2645281140797D0005A0BBC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E264526F140797D0005A0BBC /* .gitignore */; };
+		E2645282140797D0005A0BBC /* ActiveRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E2645271140797D0005A0BBC /* ActiveRecordHelpers.m */; };
+		E2645283140797D0005A0BBC /* ARCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E2645273140797D0005A0BBC /* ARCoreDataAction.m */; };
+		E2645284140797D0005A0BBC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E2645275140797D0005A0BBC /* LICENSE */; };
+		E2645285140797D0005A0BBC /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E2645277140797D0005A0BBC /* NSManagedObject+ActiveRecord.m */; };
+		E2645286140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E2645279140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.m */; };
+		E2645287140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E264527B140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.m */; };
+		E2645288140797D0005A0BBC /* NSPersistentStore+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E264527D140797D0005A0BBC /* NSPersistentStore+ActiveRecord.m */; };
+		E2645289140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E264527F140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m */; };
+		E264528A140797D0005A0BBC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E2645280140797D0005A0BBC /* README.md */; };
+		E264528C14079829005A0BBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E264528B14079829005A0BBC /* CoreData.framework */; };
 		E27E7E3213F47971001B180C /* icon-kim.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2E13F47971001B180C /* icon-kim.png */; };
 		E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2F13F47971001B180C /* icon-kim@2x.png */; };
 		E27E7E3413F47971001B180C /* icon-lieven.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3013F47971001B180C /* icon-lieven.png */; };
@@ -64,6 +78,30 @@
 		E264523B140719A1005A0BBC /* SexController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexController.xib; sourceTree = "<group>"; };
 		E264523E140723D8005A0BBC /* LabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelView.h; sourceTree = "<group>"; };
 		E264523F140723D8005A0BBC /* LabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelView.m; sourceTree = "<group>"; };
+		E264524314079197005A0BBC /* Storage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storage.xcdatamodel; sourceTree = "<group>"; };
+		E264524A14079330005A0BBC /* Kid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kid.m; sourceTree = "<group>"; };
+		E264524B14079330005A0BBC /* Kid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kid.h; sourceTree = "<group>"; };
+		E264524C14079330005A0BBC /* _Kid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Kid.m; sourceTree = "<group>"; };
+		E264524D14079330005A0BBC /* _Kid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Kid.h; sourceTree = "<group>"; };
+		E264526F140797D0005A0BBC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E2645270140797D0005A0BBC /* ActiveRecordHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveRecordHelpers.h; sourceTree = "<group>"; };
+		E2645271140797D0005A0BBC /* ActiveRecordHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveRecordHelpers.m; sourceTree = "<group>"; };
+		E2645272140797D0005A0BBC /* ARCoreDataAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoreDataAction.h; sourceTree = "<group>"; };
+		E2645273140797D0005A0BBC /* ARCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoreDataAction.m; sourceTree = "<group>"; };
+		E2645274140797D0005A0BBC /* CoreData+ActiveRecordFetching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+ActiveRecordFetching.h"; sourceTree = "<group>"; };
+		E2645275140797D0005A0BBC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E2645276140797D0005A0BBC /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		E2645277140797D0005A0BBC /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
+		E2645278140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+ActiveRecord.h"; sourceTree = "<group>"; };
+		E2645279140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+ActiveRecord.m"; sourceTree = "<group>"; };
+		E264527A140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+ActiveRecord.h"; sourceTree = "<group>"; };
+		E264527B140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+ActiveRecord.m"; sourceTree = "<group>"; };
+		E264527C140797D0005A0BBC /* NSPersistentStore+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStore+ActiveRecord.h"; sourceTree = "<group>"; };
+		E264527D140797D0005A0BBC /* NSPersistentStore+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+ActiveRecord.m"; sourceTree = "<group>"; };
+		E264527E140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStoreCoordinator+ActiveRecord.h"; sourceTree = "<group>"; };
+		E264527F140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+ActiveRecord.m"; sourceTree = "<group>"; };
+		E2645280140797D0005A0BBC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E264528B14079829005A0BBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E27E7E2E13F47971001B180C /* icon-kim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim.png"; sourceTree = "<group>"; };
 		E27E7E2F13F47971001B180C /* icon-kim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim@2x.png"; sourceTree = "<group>"; };
 		E27E7E3013F47971001B180C /* icon-lieven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven.png"; sourceTree = "<group>"; };
@@ -83,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E264528C14079829005A0BBC /* CoreData.framework in Frameworks */,
 				E24B325013F3343200278E9E /* UIKit.framework in Frameworks */,
 				E24B325213F3343200278E9E /* Foundation.framework in Frameworks */,
 				E24B325413F3343200278E9E /* CoreGraphics.framework in Frameworks */,
@@ -108,6 +147,7 @@
 		E24B324013F3343100278E9E = {
 			isa = PBXGroup;
 			children = (
+				E264528B14079829005A0BBC /* CoreData.framework */,
 				E24B325513F3343200278E9E /* KidApp */,
 				E24B324E13F3343200278E9E /* Frameworks */,
 				E24B324C13F3343200278E9E /* Products */,
@@ -135,6 +175,8 @@
 		E24B325513F3343200278E9E /* KidApp */ = {
 			isa = PBXGroup;
 			children = (
+				E26452501407978B005A0BBC /* vendor */,
+				E264524114079186005A0BBC /* Data */,
 				E22714C91405AEC1008FC3FD /* Components */,
 				E27E7E2C13F47971001B180C /* Assets */,
 				E24B326F13F3343D00278E9E /* iPad */,
@@ -175,6 +217,51 @@
 				E24B327013F3343E00278E9E /* MainWindow-iPad.xib */,
 			);
 			name = iPad;
+			sourceTree = "<group>";
+		};
+		E264524114079186005A0BBC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E264524A14079330005A0BBC /* Kid.m */,
+				E264524B14079330005A0BBC /* Kid.h */,
+				E264524C14079330005A0BBC /* _Kid.m */,
+				E264524D14079330005A0BBC /* _Kid.h */,
+				E264524214079197005A0BBC /* Storage.xcdatamodeld */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		E26452501407978B005A0BBC /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E264526E140797D0005A0BBC /* MagicalRecord */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		E264526E140797D0005A0BBC /* MagicalRecord */ = {
+			isa = PBXGroup;
+			children = (
+				E264526F140797D0005A0BBC /* .gitignore */,
+				E2645270140797D0005A0BBC /* ActiveRecordHelpers.h */,
+				E2645271140797D0005A0BBC /* ActiveRecordHelpers.m */,
+				E2645272140797D0005A0BBC /* ARCoreDataAction.h */,
+				E2645273140797D0005A0BBC /* ARCoreDataAction.m */,
+				E2645274140797D0005A0BBC /* CoreData+ActiveRecordFetching.h */,
+				E2645275140797D0005A0BBC /* LICENSE */,
+				E2645276140797D0005A0BBC /* NSManagedObject+ActiveRecord.h */,
+				E2645277140797D0005A0BBC /* NSManagedObject+ActiveRecord.m */,
+				E2645278140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.h */,
+				E2645279140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.m */,
+				E264527A140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.h */,
+				E264527B140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.m */,
+				E264527C140797D0005A0BBC /* NSPersistentStore+ActiveRecord.h */,
+				E264527D140797D0005A0BBC /* NSPersistentStore+ActiveRecord.m */,
+				E264527E140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.h */,
+				E264527F140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m */,
+				E2645280140797D0005A0BBC /* README.md */,
+			);
+			path = MagicalRecord;
 			sourceTree = "<group>";
 		};
 		E27E7E2C13F47971001B180C /* Assets */ = {
@@ -267,6 +354,9 @@
 				E22714C81405A3F3008FC3FD /* sperm_egg.jpg in Resources */,
 				E26452371406F38D005A0BBC /* DateController.xib in Resources */,
 				E264523D140719A1005A0BBC /* SexController.xib in Resources */,
+				E2645281140797D0005A0BBC /* .gitignore in Resources */,
+				E2645284140797D0005A0BBC /* LICENSE in Resources */,
+				E264528A140797D0005A0BBC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +376,16 @@
 				E26452361406F38D005A0BBC /* DateController.m in Sources */,
 				E264523C140719A1005A0BBC /* SexController.m in Sources */,
 				E2645240140723D8005A0BBC /* LabelView.m in Sources */,
+				E264524414079197005A0BBC /* Storage.xcdatamodeld in Sources */,
+				E264524E14079330005A0BBC /* Kid.m in Sources */,
+				E264524F14079330005A0BBC /* _Kid.m in Sources */,
+				E2645282140797D0005A0BBC /* ActiveRecordHelpers.m in Sources */,
+				E2645283140797D0005A0BBC /* ARCoreDataAction.m in Sources */,
+				E2645285140797D0005A0BBC /* NSManagedObject+ActiveRecord.m in Sources */,
+				E2645286140797D0005A0BBC /* NSManagedObjectContext+ActiveRecord.m in Sources */,
+				E2645287140797D0005A0BBC /* NSManagedObjectModel+ActiveRecord.m in Sources */,
+				E2645288140797D0005A0BBC /* NSPersistentStore+ActiveRecord.m in Sources */,
+				E2645289140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +505,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E264524214079197005A0BBC /* Storage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E264524314079197005A0BBC /* Storage.xcdatamodel */,
+			);
+			currentVersion = E264524314079197005A0BBC /* Storage.xcdatamodel */;
+			path = Storage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E24B324213F3343100278E9E /* Project object */;
 }

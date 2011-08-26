@@ -24,12 +24,12 @@
     if (self) {
         // Custom initialization::Geboorteuur:Geslacht:Lengte:Gewicht
         data = [[NSArray arrayWithObjects:
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Naam van het kind", @"title", @"text", @"type", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"sex", @"type", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"text", @"type", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"text", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Naam van het kind", @"title", @"text", @"type", @"name", @"key", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"birthdate", @"key", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"birthhour", @"key", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"sex", @"type", @"sex", @"key", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"number", @"type", @"length", @"key", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"number", @"type", @"weight", @"key", @"", @"data", nil], 
                 nil] retain];
         currentlyEditing = NSNotFound;
         lastEdited = NSNotFound;
@@ -58,6 +58,11 @@
 {
     [super viewDidLoad];
     
+    _kid = [[Kid findOrCreateByAttribute:@"parent" withValue:_person] retain];
+    for (int i=0; i<data.count; ++i) {
+        [[data objectAtIndex:i] setValue:[_kid valueForKey:[[data objectAtIndex:i] valueForKey:@"key"]] forKey:@"data"];
+    }
+
     self.title = self.person;
     self.navigationController.navigationBar.tintColor = [self.person isEqualToString:@"Lieven"] 
         ? [UIColor colorWithRed:0.314 green:0.573 blue:0.816 alpha:1.000]
@@ -77,6 +82,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [_kid release];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -124,6 +130,9 @@
 - (void)finishedEditing:(NSString *)content {
     NSLog(@"editing = %d --> %@", lastEdited, content);
     [[data objectAtIndex:lastEdited] setValue:content forKey:@"data"];
+    
+    [_kid setValue:content forKey:[[data objectAtIndex:lastEdited] valueForKey:@"key"]];
+    [[NSManagedObjectContext defaultContext] save];
 }
 
 #pragma mark - Table view data source
@@ -159,16 +168,21 @@
     NSString* type = [[data objectAtIndex:section] objectForKey:@"type"];
 
     UITableViewCell *cell;
-    if ([type isEqualToString:@"text"]) {
+    if ([type isEqualToString:@"text"] || [type isEqualToString:@"number"]) {
         static NSString *TextFieldCellIdentifier = @"TextFieldCell";
         
         cell = [tableView dequeueReusableCellWithIdentifier:TextFieldCellIdentifier];
         if (cell == nil) {
             cell = [[[TextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TextFieldCellIdentifier] autorelease];
         }
-        ((TextFieldCell*)cell).delegate = self;
-
-        [((TextFieldCell*)cell).field setText:[[data objectAtIndex:section] objectForKey:@"data"]];
+        
+        TextFieldCell* tfc = (TextFieldCell*)cell;
+        tfc.delegate = self;
+        [tfc.field setText:[[data objectAtIndex:section] objectForKey:@"data"]];
+        if ([type isEqualToString:@"text"]) 
+            tfc.field.keyboardType = UIKeyboardTypeAlphabet;
+        else
+            tfc.field.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     }
     else {
         static NSString *CellIdentifier = @"Cell";
@@ -248,10 +262,16 @@
     DateController* dateController = (DateController*)_poController.contentViewController;
     
     if (save) {
-        if (currentlyEditing == 1)
+        if (currentlyEditing == 1) {
             [[data objectAtIndex:currentlyEditing] setValue:[dateController getDateValue] forKey:@"data"];
-        else if (currentlyEditing == 2) 
+            [_kid setValue:[dateController getDateValue] forKey:[[data objectAtIndex:currentlyEditing] valueForKey:@"key"]];
+            [[NSManagedObjectContext defaultContext] save];
+        }
+        else if (currentlyEditing == 2) {
             [[data objectAtIndex:currentlyEditing] setValue:[dateController getTimeValue] forKey:@"data"];
+            [_kid setValue:[dateController getTimeValue] forKey:[[data objectAtIndex:currentlyEditing] valueForKey:@"key"]];
+            [[NSManagedObjectContext defaultContext] save];
+        }
         [_tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentlyEditing] animated:YES];
     }
     
@@ -265,6 +285,8 @@
 - (void)dismissAndSave:(BOOL)save withValue:(NSString *)value {
     if (save) {
         [[data objectAtIndex:currentlyEditing] setValue:value forKey:@"data"];
+        [_kid setValue:value forKey:[[data objectAtIndex:currentlyEditing] valueForKey:@"key"]];
+        [[NSManagedObjectContext defaultContext] save];
         [_tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentlyEditing] animated:YES];
     }
     

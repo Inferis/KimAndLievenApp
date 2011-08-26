@@ -10,12 +10,13 @@
 #import "TextFieldCell.h"
 #import "DateController.h"
 #import "SexController.h"
-
+#import "Kid.h"
 @interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TextFieldCellDelegate, UIPopoverControllerDelegate, DateControllerDelegate, SexControllerDelegate> {
     @private
     int currentlyEditing, lastEdited;
     NSArray* data;
     UIPopoverController* _poController;
+    Kid* _kid;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
