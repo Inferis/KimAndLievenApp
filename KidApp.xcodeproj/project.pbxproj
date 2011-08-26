@@ -20,6 +20,8 @@
 		E24B327B13F3BF1300278E9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B327913F3BF1300278E9E /* RootViewController.m */; };
 		E26452361406F38D005A0BBC /* DateController.m in Sources */ = {isa = PBXBuildFile; fileRef = E26452341406F38D005A0BBC /* DateController.m */; };
 		E26452371406F38D005A0BBC /* DateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26452351406F38D005A0BBC /* DateController.xib */; };
+		E264523C140719A1005A0BBC /* SexController.m in Sources */ = {isa = PBXBuildFile; fileRef = E264523A140719A0005A0BBC /* SexController.m */; };
+		E264523D140719A1005A0BBC /* SexController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E264523B140719A1005A0BBC /* SexController.xib */; };
 		E27E7E3213F47971001B180C /* icon-kim.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2E13F47971001B180C /* icon-kim.png */; };
 		E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2F13F47971001B180C /* icon-kim@2x.png */; };
 		E27E7E3413F47971001B180C /* icon-lieven.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3013F47971001B180C /* icon-lieven.png */; };
@@ -56,6 +58,9 @@
 		E26452331406F38D005A0BBC /* DateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateController.h; sourceTree = "<group>"; };
 		E26452341406F38D005A0BBC /* DateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateController.m; sourceTree = "<group>"; };
 		E26452351406F38D005A0BBC /* DateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateController.xib; sourceTree = "<group>"; };
+		E2645239140719A0005A0BBC /* SexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexController.h; sourceTree = "<group>"; };
+		E264523A140719A0005A0BBC /* SexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexController.m; sourceTree = "<group>"; };
+		E264523B140719A1005A0BBC /* SexController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexController.xib; sourceTree = "<group>"; };
 		E27E7E2E13F47971001B180C /* icon-kim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim.png"; sourceTree = "<group>"; };
 		E27E7E2F13F47971001B180C /* icon-kim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim@2x.png"; sourceTree = "<group>"; };
 		E27E7E3013F47971001B180C /* icon-lieven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven.png"; sourceTree = "<group>"; };
@@ -141,6 +146,9 @@
 				E26452331406F38D005A0BBC /* DateController.h */,
 				E26452341406F38D005A0BBC /* DateController.m */,
 				E26452351406F38D005A0BBC /* DateController.xib */,
+				E2645239140719A0005A0BBC /* SexController.h */,
+				E264523A140719A0005A0BBC /* SexController.m */,
+				E264523B140719A1005A0BBC /* SexController.xib */,
 			);
 			path = KidApp;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				E2E441D713F4A704009909D8 /* RootViewController.xib in Resources */,
 				E22714C81405A3F3008FC3FD /* sperm_egg.jpg in Resources */,
 				E26452371406F38D005A0BBC /* DateController.xib in Resources */,
+				E264523D140719A1005A0BBC /* SexController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +279,7 @@
 				E22714CC1405AEE4008FC3FD /* NormalTextFieldCell.m in Sources */,
 				E22BB22B1405B17E00409D6F /* TextFieldCell.m in Sources */,
 				E26452361406F38D005A0BBC /* DateController.m in Sources */,
+				E264523C140719A1005A0BBC /* SexController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

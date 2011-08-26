@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "TextFieldCell.h"
 #import "DateController.h"
+#import "SexController.h"
 
-@interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TextFieldCellDelegate, UIPopoverControllerDelegate, DateControllerDelegate> {
+@interface FormViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TextFieldCellDelegate, UIPopoverControllerDelegate, DateControllerDelegate, SexControllerDelegate> {
     @private
     int currentlyEditing, lastEdited;
     NSArray* data;

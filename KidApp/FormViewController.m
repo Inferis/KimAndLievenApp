@@ -9,6 +9,7 @@
 #import "FormViewController.h"
 #import "TextFieldCell.h"
 #import "DateController.h"
+#import "SexController.h"
 
 @implementation FormViewController
 
@@ -25,7 +26,7 @@
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Naam van het kind", @"title", @"text", @"type", @"", @"data", nil], 
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"", @"data", nil], 
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"choice", @"type", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"sex", @"type", @"", @"data", nil], 
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"text", @"type", @"", @"data", nil], 
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"text", @"type", @"", @"data", nil], 
                 nil] retain];
@@ -221,6 +222,14 @@
         _poController.delegate = self;
         [_poController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
     }
+    else if ([type isEqualToString:@"sex"]) {
+        SexController* sexController = [[[SexController alloc] initWithSex:[row valueForKey:@"data"]] autorelease];
+        sexController.delegate = self;
+        _poController = [[UIPopoverController alloc] initWithContentViewController:sexController];
+        _poController.popoverContentSize = [sexController popoverSize];
+        _poController.delegate = self;
+        [_poController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
+    }
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
@@ -248,4 +257,18 @@
     currentlyEditing = NSNotFound;
     [_tableView reloadSections:indexes withRowAnimation:UITableViewRowAnimationFade];
 }
+
+- (void)dismissAndSave:(BOOL)save withValue:(NSString *)value {
+    if (save) {
+        [[data objectAtIndex:currentlyEditing] setValue:value forKey:@"data"];
+        [_tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentlyEditing] animated:YES];
+    }
+    
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:currentlyEditing];
+    [_poController dismissPopoverAnimated:YES];
+    
+    currentlyEditing = NSNotFound;
+    [_tableView reloadSections:indexes withRowAnimation:UITableViewRowAnimationFade];
+}
+
 @end
