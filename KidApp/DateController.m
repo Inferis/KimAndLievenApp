@@ -33,7 +33,7 @@
         // Custom initialization
         _mode = UIDatePickerModeTime;
         _value = [time retain];
-        self.view.frame = (CGRect) { 0, 0, 200, 216 };
+        self.view.frame = (CGRect) { 0, 0, 320, 216 };
     }
     
     return self;

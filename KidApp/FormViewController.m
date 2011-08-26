@@ -10,6 +10,7 @@
 #import "TextFieldCell.h"
 #import "DateController.h"
 #import "SexController.h"
+#import "LabelView.h"
 
 @implementation FormViewController
 
@@ -83,7 +84,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-	return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+	return interfaceOrientation == UIInterfaceOrientationLandscapeLeft;
 }
 
 #pragma mark - Keyboard handling
@@ -145,14 +146,7 @@
     section = currentlyEditing != NSNotFound ? currentlyEditing : section;
     NSString* title = [[data objectAtIndex:section] objectForKey:@"title"];
 
-    UILabel* label = [[[UILabel alloc] initWithFrame:(CGRect) { 25, 0, tableView.frame.size.width, 44 }] autorelease];
-    label.text = title;
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor whiteColor]];
-    [label setShadowColor:[UIColor blackColor]];
-    [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22]];
-    
-    return label;
+    return [[[LabelView alloc] initWithTitle:title frame:(CGRect) { 0, 0, tableView.frame.size.width, 44 }] autorelease];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -186,6 +180,16 @@
         
         [cell.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22]];
         cell.textLabel.text = [[data objectAtIndex:section] objectForKey:@"data"];
+
+        cell.imageView.image = nil;
+        if ([type isEqualToString:@"sex"]) {
+            if ([cell.textLabel.text isEqualToString:@"jongen"]) {
+                cell.imageView.image = [UIImage imageNamed:@"icon-lieven.png"];
+            }
+            else if ([cell.textLabel.text isEqualToString:@"meisje"]) {
+                cell.imageView.image = [UIImage imageNamed:@"icon-kim.png"];
+            }
+        }
     }
 
         

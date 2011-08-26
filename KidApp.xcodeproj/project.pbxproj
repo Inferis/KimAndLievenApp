@@ -22,6 +22,7 @@
 		E26452371406F38D005A0BBC /* DateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26452351406F38D005A0BBC /* DateController.xib */; };
 		E264523C140719A1005A0BBC /* SexController.m in Sources */ = {isa = PBXBuildFile; fileRef = E264523A140719A0005A0BBC /* SexController.m */; };
 		E264523D140719A1005A0BBC /* SexController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E264523B140719A1005A0BBC /* SexController.xib */; };
+		E2645240140723D8005A0BBC /* LabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E264523F140723D8005A0BBC /* LabelView.m */; };
 		E27E7E3213F47971001B180C /* icon-kim.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2E13F47971001B180C /* icon-kim.png */; };
 		E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2F13F47971001B180C /* icon-kim@2x.png */; };
 		E27E7E3413F47971001B180C /* icon-lieven.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3013F47971001B180C /* icon-lieven.png */; };
@@ -61,6 +62,8 @@
 		E2645239140719A0005A0BBC /* SexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexController.h; sourceTree = "<group>"; };
 		E264523A140719A0005A0BBC /* SexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexController.m; sourceTree = "<group>"; };
 		E264523B140719A1005A0BBC /* SexController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexController.xib; sourceTree = "<group>"; };
+		E264523E140723D8005A0BBC /* LabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelView.h; sourceTree = "<group>"; };
+		E264523F140723D8005A0BBC /* LabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelView.m; sourceTree = "<group>"; };
 		E27E7E2E13F47971001B180C /* icon-kim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim.png"; sourceTree = "<group>"; };
 		E27E7E2F13F47971001B180C /* icon-kim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim@2x.png"; sourceTree = "<group>"; };
 		E27E7E3013F47971001B180C /* icon-lieven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven.png"; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				E22BB22A1405B17E00409D6F /* TextFieldCell.h */,
 				E22714CA1405AEE4008FC3FD /* NormalTextFieldCell.m */,
 				E22714CB1405AEE4008FC3FD /* NormalTextFieldCell.h */,
+				E264523E140723D8005A0BBC /* LabelView.h */,
+				E264523F140723D8005A0BBC /* LabelView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				E22BB22B1405B17E00409D6F /* TextFieldCell.m in Sources */,
 				E26452361406F38D005A0BBC /* DateController.m in Sources */,
 				E264523C140719A1005A0BBC /* SexController.m in Sources */,
+				E2645240140723D8005A0BBC /* LabelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
