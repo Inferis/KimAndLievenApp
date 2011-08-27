@@ -15,6 +15,7 @@
 @interface TextFieldCell : UITableViewCell <UITextFieldDelegate>
 
 @property (nonatomic, retain) UITextField *field;
+@property (nonatomic, retain) UILabel *suffix;
 @property (nonatomic, retain) id<TextFieldCellDelegate> delegate;
 
 @end

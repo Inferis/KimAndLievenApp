@@ -17,8 +17,9 @@
         UILabel* label = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
         label.text = title;
         [label setBackgroundColor:[UIColor clearColor]];
-        [label setTextColor:[UIColor whiteColor]];
-        [label setShadowColor:[UIColor blackColor]];
+        [label setTextColor:[UIColor darkGrayColor]];
+        [label setShadowOffset:(CGSize) { 0, 1 }];
+        [label setShadowColor:[UIColor lightGrayColor]];
         [label setTextAlignment:UITextAlignmentRight];
         [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22]];
         [label setAutoresizingMask:UIViewAutoresizingFlexibleWidth];

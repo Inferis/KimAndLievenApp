@@ -31,8 +31,12 @@
     self.title = @"Het koppel";
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clear)];
+}
+
+- (void)clear {
+    [Kid truncateAll];
+    [[NSManagedObjectContext defaultContext] save];
 }
 
 - (void)viewWillAppear:(BOOL)animated  {

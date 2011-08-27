@@ -11,6 +11,7 @@
 @implementation TextFieldCell
 
 @synthesize field = _field;
+@synthesize suffix = _suffix;
 @synthesize delegate = _delegate;
 
 #pragma mark - Initialization
@@ -31,7 +32,15 @@
         self.field.keyboardType = UIKeyboardTypeAlphabet;
         self.field.delegate = self;
 		[self.contentView addSubview:self.field];
-    }
+
+        self.suffix = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 210, 34)];
+        self.suffix.font = [UIFont fontWithName:@"HelveticaNeue" size:22];
+        self.suffix.textColor = [UIColor blackColor];
+        self.suffix.textAlignment = UITextAlignmentRight;
+        self.suffix.opaque = NO;
+        self.suffix.backgroundColor = nil;
+		[self.contentView addSubview:self.suffix];
+}
     return self;
 }
 
@@ -50,8 +59,17 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    self.field.frame = (CGRect) { 10, 11, self.bounds.size.width - 20, 34 };
+
+    if (self.suffix.text != nil && self.suffix.text.length > 0) {
+        self.suffix.alpha = 1;
+        CGSize sz = [self.suffix.text sizeWithFont:self.suffix.font];
+        self.suffix.frame = (CGRect) { self.contentView.frame.size.width - 10 - sz.width, 11, sz.width, sz.height }; 
+        self.field.frame = (CGRect) { 10, 11, self.contentView.frame.size.width - 30 - sz.width, 34 };
+    }
+    else {
+        self.field.frame = (CGRect) { 10, 11, self.contentView.frame.size.width - 20, 34 };
+        self.suffix.alpha = 0;
+    }
 }
 
 #pragma mark - Memory

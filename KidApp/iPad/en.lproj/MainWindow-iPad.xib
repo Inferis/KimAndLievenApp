@@ -49,8 +49,8 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIImageView" id="788006830">
 						<reference key="NSNextResponder" ref="380026005"/>
-						<int key="NSvFlags">1316</int>
-						<string key="NSFrameSize">{768, 1024}</string>
+						<int key="NSvFlags">1313</int>
+						<string key="NSFrame">{{64, 0}, {704, 1024}}</string>
 						<reference key="NSSuperview" ref="380026005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -58,7 +58,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sperm_egg.jpg</string>
+							<string key="NSResourceName">chick.jpg</string>
 						</object>
 					</object>
 				</object>
@@ -368,7 +368,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">sperm_egg.jpg</string>
+			<string key="NS.key.0">chick.jpg</string>
 			<string key="NS.object.0">{704, 1024}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">919</string>

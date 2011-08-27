@@ -28,8 +28,8 @@
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboortedatum", @"title", @"date", @"type", @"birthdate", @"key", @"", @"data", nil], 
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geboorteuur", @"title", @"time", @"type", @"birthhour", @"key", @"", @"data", nil], 
                  [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Geslacht", @"title", @"sex", @"type", @"sex", @"key", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"number", @"type", @"length", @"key", @"", @"data", nil], 
-                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"number", @"type", @"weight", @"key", @"", @"data", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Lengte", @"title", @"number", @"type", @"length", @"key", @"", @"data", @"cm", @"suffix", nil], 
+                 [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Gewicht", @"title", @"number", @"type", @"weight", @"key", @"", @"data", @"gr", @"suffix", nil], 
                 nil] retain];
         currentlyEditing = NSNotFound;
         lastEdited = NSNotFound;
@@ -183,6 +183,8 @@
             tfc.field.keyboardType = UIKeyboardTypeAlphabet;
         else
             tfc.field.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+        NSLog(@"log = %@", [[data objectAtIndex:section] valueForKey:@"suffix"]);
+        tfc.suffix.text = [[data objectAtIndex:section] valueForKey:@"suffix"];
     }
     else {
         static NSString *CellIdentifier = @"Cell";

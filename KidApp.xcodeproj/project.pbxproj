@@ -37,6 +37,9 @@
 		E2645289140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E264527F140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m */; };
 		E264528A140797D0005A0BBC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E2645280140797D0005A0BBC /* README.md */; };
 		E264528C14079829005A0BBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E264528B14079829005A0BBC /* CoreData.framework */; };
+		E264529314086C90005A0BBC /* chick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E264529214086C90005A0BBC /* chick.jpg */; };
+		E264529514087005005A0BBC /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E264529414087005005A0BBC /* icon.png */; };
+		E264529714087082005A0BBC /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E264529614087081005A0BBC /* Default-Landscape~ipad.png */; };
 		E27E7E3213F47971001B180C /* icon-kim.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2E13F47971001B180C /* icon-kim.png */; };
 		E27E7E3313F47971001B180C /* icon-kim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E2F13F47971001B180C /* icon-kim@2x.png */; };
 		E27E7E3413F47971001B180C /* icon-lieven.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E7E3013F47971001B180C /* icon-lieven.png */; };
@@ -102,6 +105,9 @@
 		E264527F140797D0005A0BBC /* NSPersistentStoreCoordinator+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+ActiveRecord.m"; sourceTree = "<group>"; };
 		E2645280140797D0005A0BBC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E264528B14079829005A0BBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E264529214086C90005A0BBC /* chick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chick.jpg; sourceTree = "<group>"; };
+		E264529414087005005A0BBC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E264529614087081005A0BBC /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		E27E7E2E13F47971001B180C /* icon-kim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim.png"; sourceTree = "<group>"; };
 		E27E7E2F13F47971001B180C /* icon-kim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-kim@2x.png"; sourceTree = "<group>"; };
 		E27E7E3013F47971001B180C /* icon-lieven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lieven.png"; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 		E24B324013F3343100278E9E = {
 			isa = PBXGroup;
 			children = (
+				E264529614087081005A0BBC /* Default-Landscape~ipad.png */,
+				E264529414087005005A0BBC /* icon.png */,
 				E264528B14079829005A0BBC /* CoreData.framework */,
 				E24B325513F3343200278E9E /* KidApp */,
 				E24B324E13F3343200278E9E /* Frameworks */,
@@ -276,6 +284,7 @@
 		E27E7E2D13F47971001B180C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E264529214086C90005A0BBC /* chick.jpg */,
 				E22714C71405A3F3008FC3FD /* sperm_egg.jpg */,
 				E2DC271913F48FAC0092E2E7 /* bg-Kim.jpg */,
 				E2DC271A13F48FAC0092E2E7 /* bg-Lieven.jpg */,
@@ -357,6 +366,9 @@
 				E2645281140797D0005A0BBC /* .gitignore in Resources */,
 				E2645284140797D0005A0BBC /* LICENSE in Resources */,
 				E264528A140797D0005A0BBC /* README.md in Resources */,
+				E264529314086C90005A0BBC /* chick.jpg in Resources */,
+				E264529514087005005A0BBC /* icon.png in Resources */,
+				E264529714087082005A0BBC /* Default-Landscape~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
